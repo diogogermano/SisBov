@@ -6,6 +6,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Piquete {
@@ -17,10 +19,10 @@ public class Piquete {
 	@Column
 	private int capacidade;
 	
-	@Column
+	@OneToOne
 	private Lote lote;
 	
-	@Column
+	@ManyToOne( targetEntity = Propriedade.class, fetch=FetchType.LAZY )
 	private Propriedade propriedade;
 
 	public Long getId() {

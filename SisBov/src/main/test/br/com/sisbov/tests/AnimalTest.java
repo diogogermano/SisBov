@@ -3,6 +3,8 @@ package br.com.sisbov.tests;
 import org.junit.Test;
 
 import br.com.sisbov.dao.impl.AnimalDao;
+import br.com.sisbov.dao.impl.LoteDao;
+import br.com.sisbov.dao.impl.RacaDao;
 import br.com.sisbov.persistence.Animal;
 import br.com.sisbov.persistence.Lote;
 import br.com.sisbov.persistence.Piquete;
@@ -15,9 +17,13 @@ public class AnimalTest {
 	public void test() {
 		Animal boi = new Animal();
 		AnimalDao dao = new AnimalDao();
+		LoteDao lotedao = new LoteDao();
+		
 		Lote lote = new Lote();
 		Raca nelore = new Raca();
 		Piquete piquet = new Piquete();
+		
+		
 		
 		boi.setIdade(15);
 		boi.setLote(lote);

@@ -1,5 +1,7 @@
 package br.com.sisbov.persistence;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,7 +17,7 @@ public class Lote {
 	private Long id;
 	
 	@Column
-	private Animal animais[];
+	private Animal animal;
 	
 	@OneToOne
 	private Piquete piquete;
@@ -28,12 +30,12 @@ public class Lote {
 		this.id = id;
 	}
 
-	public Animal[] getAnimais() {
-		return animais;
+	public Animal getAnimal() {
+		return animal;
 	}
 
-	public void setAnimais(Animal[] animais) {
-		this.animais = animais;
+	public void setAnimal(Animal animal) {
+		this.animal = animal;
 	}
 
 	public Piquete getPiquete() {

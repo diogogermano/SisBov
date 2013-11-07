@@ -18,6 +18,7 @@ public class AnimalTest {
 		Animal boi = new Animal();
 		AnimalDao dao = new AnimalDao();
 		LoteDao lotedao = new LoteDao();
+		RacaDao racadao = new RacaDao();
 		
 		Lote lote = new Lote();
 		Raca nelore = new Raca();
@@ -31,6 +32,8 @@ public class AnimalTest {
 		boi.setRaca(nelore);
 		boi.setSexo(Sexo.MACHO);
 		
+		racadao.save(nelore);
+		lotedao.save(lote);
 		dao.save(boi);
 	}
 

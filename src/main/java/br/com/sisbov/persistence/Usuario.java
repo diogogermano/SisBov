@@ -5,20 +5,21 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+
 
 @Entity
-public class Lote {
+public class Usuario {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@Column
-	private Animal animal;
 	
-	@OneToOne
-	private Piquete piquete;
+	@Column
+	private String login;
+	
+	@Column
+	private String senha;
 
 	public Long getId() {
 		return id;
@@ -28,23 +29,21 @@ public class Lote {
 		this.id = id;
 	}
 
-	public Animal getAnimal() {
-		return animal;
+	public String getLogin() {
+		return login;
 	}
 
-	public void setAnimal(Animal animal) {
-		this.animal = animal;
+	public void setLogin(String login) {
+		this.login = login;
 	}
 
-	public Piquete getPiquete() {
-		return piquete;
+	public String getSenha() {
+		return senha;
 	}
 
-	public void setPiquete(Piquete piquete) {
-		this.piquete = piquete;
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 	
 	
-	
-
 }

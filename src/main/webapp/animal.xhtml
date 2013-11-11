@@ -8,18 +8,37 @@
 	<title>Cadastro de Animal</title>
 </h:head>
 <h:body>
-	<h1>Cadastro de Animal</h1>
+	<h1>Cadastro de Concessionária</h1>
 	<h:form>
-		<h:messages />
+	<h:messages/>
 		<h:panelGrid columns="2">
-			
-			<h:outputLabel value="Idade:" for="idade" />
-			<h:inputText id="idade" value="#{animalBean.animal.idade}" />
+			<h:outputLabel value="Idade:" for="nomeAnimal" />
+			<h:inputText id="idadeAnimal"
+				value="#{animalBean.animal.idade}" />
+
+			<h:outputLabel value="Lote:" for="loteAnimal" />
+			<h:inputText id="loteAnimal"
+				value="#{animalBean.animal.lote}" />
+
+			<h:outputLabel value="Raça:" for="raçaAnimal" />
+			<h:inputText id="raçaAnimal"
+				value="#{animalBean.animal.raca}" />
+
+			<h:outputLabel value="Peso:" for="pesoAnimal" />
+			<h:inputText id="pesoAnimal"
+				value="#{animalBean.animal.peso}" />
 
 			
 
-			<h:commandButton value="Inserir Carro"
-				action="#{veiculoBean.inserirCarro}" />
+
+			<h:outputLabel value="Sexo:" for="sexo" />
+			<h:selectOneMenu id="sexo" value="#{animalBean.animal.sexo}">
+				<f:selectItems value="#{animalBean.sexoValues}" var="sexo"
+					itemValue="#{sexo}" itemLabel="#{sexo.descricao}" />
+			</h:selectOneMenu>
+
+			<h:commandButton value="Inserir"
+				action="#{animalBean.inserir}" />
 		</h:panelGrid>
 	</h:form>
 

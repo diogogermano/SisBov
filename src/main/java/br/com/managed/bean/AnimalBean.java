@@ -5,6 +5,7 @@ import javax.faces.context.FacesContext;
 
 import br.com.sisbov.dao.impl.AnimalDao;
 import br.com.sisbov.persistence.Animal;
+import br.com.sisbov.types.Sexo;
 
 
 
@@ -31,8 +32,8 @@ public class AnimalBean {
 		}
 	} 
 
-	public Sexo[] getUfValues() {
-		return Uf.values();
+	public Sexo[] getSexoValues() {
+		return Sexo.values();
 	}
 
 }

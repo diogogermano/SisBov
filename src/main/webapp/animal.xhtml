@@ -8,7 +8,7 @@
 	<title>Cadastro de Animal</title>
 </h:head>
 <h:body>
-	<h1>Cadastro de Concessionária</h1>
+	<h1>Cadastro de Animal</h1>
 	<h:form>
 	<h:messages/>
 		<h:panelGrid columns="2">
@@ -28,12 +28,9 @@
 			<h:inputText id="pesoAnimal"
 				value="#{animalBean.animal.peso}" />
 
-			
-
-
 			<h:outputLabel value="Sexo:" for="sexo" />
 			<h:selectOneMenu id="sexo" value="#{animalBean.animal.sexo}">
-				<f:selectItems value="#{animalBean.sexoValues}" var="sexo"
+				<f:selectItems value="#{animalBean.sexo.values()}" var="sexo"
 					itemValue="#{sexo}" itemLabel="#{sexo.descricao}" />
 			</h:selectOneMenu>
 

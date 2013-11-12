@@ -6,12 +6,10 @@
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<h:outputStylesheet library="css" name="bootstrap.css" />
-	<title>Cadastro de Animal</title>
-	
+	<title>Cadastro de Lote</title>
 </h:head>
 <h:body>
-	<h1> Cadastro de Animal</h1>
+	<h1> Cadastro de Lote</h1>
 	<h:form>
 	<h:messages/>
 		<h:panelGrid columns="2">
@@ -19,22 +17,12 @@
 			<p:inputText id="idadeAnimal"
 				value="#{animalBean.animal.idade}" />
 
-			<p:outputLabel value="Lote:" for="loteAnimal" />
-			<p:inputText id="loteAnimal"
-				value="#{animalBean.animal.lote}" />
-
-			<p:outputLabel value="Raça:" for="raçaAnimal" />
-			<p:inputText id="raçaAnimal"
-				value="#{animalBean.animal.raca}" />
-
-			<p:outputLabel value="Peso:" for="pesoAnimal" />
-			<p:inputText id="pesoAnimal"
-				value="#{animalBean.animal.peso}" />
+			<
 
 			
 
 			<p:commandButton value="Inserir"
-				action="#{animalBean.inserir}" />
+				action="#{loteBean.inserir}" />
 		</h:panelGrid>
 	</h:form>
 

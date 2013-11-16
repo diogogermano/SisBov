@@ -5,7 +5,7 @@ import javax.faces.event.PhaseEvent;
 import javax.faces.event.PhaseId;
 import javax.faces.event.PhaseListener;
 
-public class Autorizador implements PhaseListener {
+public class Autorizador<NavigationHandler> implements PhaseListener {
 
     private static final long serialVersionUID = 1L;
 
@@ -20,9 +20,9 @@ public class Autorizador implements PhaseListener {
 			UsuarioBean.class);
 
 	if (!usuarioBean.isLogado()) {
-	    NavigationHandler handler = context.getApplication()
+	    NavigationHandler handler = (NavigationHandler) context.getApplication()
 		    .getNavigationHandler();
-	    handler.handleNavigation(context, null, "login?faces-redirect=true");
+	    ((javax.faces.application.NavigationHandler) handler).handleNavigation(context, null, "login?faces-redirect=true");
 	    context.renderResponse();
 	}
 

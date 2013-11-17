@@ -22,7 +22,8 @@ public class Animal {
 	@Column
 	private int idade;	
 	
-	@ManyToOne( targetEntity = Lote.class, fetch=FetchType.LAZY )
+	@ManyToOne(targetEntity = Lote.class, fetch=FetchType.LAZY)
+	@JoinColumn(name="id", insertable=false, updatable=false)
 	private Lote lote;	
 	
 	@ManyToOne( targetEntity = Raca.class, fetch=FetchType.LAZY )  

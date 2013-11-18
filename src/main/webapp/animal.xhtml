@@ -18,13 +18,13 @@
 			<p:outputLabel value="Idade: " for="idadeAnimal"/>
 			<p:inputText id="idadeAnimal" value="#{animalBean.animal.idade}"/>
 
-			<p:outputLabel value="Lote: " for="#{loteBean.lote.id}" />
+			<p:outputLabel value="Lote: " for="racaAnimal" />
         		<p:selectOneMenu value="Lote: ">   
             		<f:selectItem itemLabel="Lote 1" itemValue="#{loteBean.lote.id}" />
         		</p:selectOneMenu>
 			
-			<p:outputLabel value="Raça:" for="raçaAnimal" />
-			<p:inputText id="raçaAnimal"
+			<p:outputLabel value="Raça:" for="racaAnimal" />
+			<p:inputText id="racaAnimal"
 				value="#{animalBean.animal.raca}" />
 
 			<p:outputLabel value="Peso:" for="pesoAnimal" />

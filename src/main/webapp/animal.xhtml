@@ -14,12 +14,12 @@
 	<h1> Cadastro de Animal</h1>
 	<h:form>
 	<h:messages/>
-		<h:panelGrid columns="2">
+		<p:panelGrid columns="2">
 			<p:outputLabel value="Idade: " for="idadeAnimal"/>
 			<p:inputText id="idadeAnimal" value="#{animalBean.animal.idade}"/>
 
 			<p:outputLabel value="Lote: " for="racaAnimal" />
-        		<p:selectOneMenu value="Lote: ">   
+        		<p:selectOneMenu value="Selecione o lote">   
             		<f:selectItem itemLabel="Lote 1" itemValue="#{loteBean.lote.id}" />
         		</p:selectOneMenu>
 			
@@ -37,7 +37,7 @@
 				action="#{animalBean.inserir}" />
 			<p:commandButton value="Voltar"
 				action="index" />
-		</h:panelGrid>
+		</p:panelGrid>
 	</h:form>
 
 </h:body>

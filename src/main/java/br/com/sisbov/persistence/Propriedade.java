@@ -25,7 +25,7 @@ public class Propriedade {
 	private Proprietario proprietario;
 	
 	@Column
-	private Piquete piquetes[];
+	private int piquetes;
 
 	public Long getId() {
 		return id;
@@ -59,11 +59,11 @@ public class Propriedade {
 		this.proprietario = proprietario;
 	}
 
-	public Piquete[] getPiquetes() {
+	public int getPiquetes() {
 		return piquetes;
 	}
 
-	public void setPiquetes(Piquete[] piquetes) {
+	public void setPiquetes(int piquetes) {
 		this.piquetes = piquetes;
 	}
 

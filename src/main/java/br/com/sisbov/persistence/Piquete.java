@@ -19,8 +19,8 @@ public class Piquete {
 	@Column
 	private int capacidade;
 	
-	@OneToOne
-	private Lote lote;
+	@Column
+	private int lote;
 	
 	@ManyToOne( targetEntity = Propriedade.class, fetch=FetchType.LAZY )
 	private Propriedade propriedade;
@@ -41,12 +41,12 @@ public class Piquete {
 		this.capacidade = capacidade;
 	}
 
-	public Lote getLote() {
+	public int getLote() {
 		return lote;
 	}
 
-	public void setLote(Lote lote) {
-		this.lote = lote;
+	public void setLote(int lt) {
+		this.lote = lt;
 	}
 
 	public Propriedade getPropriedade() {

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Cadastro de Lote</title>
+</h:head>
+<h:body>
+	<h1>Cadastro de Piquete</h1>
+	<h:form>
+		<h:messages />
+		<p:panelGrid columns="2">
+
+			<p:outputLabel value="Capacidade do piquete: " for="maxAnimais" />
+			<p:inputText id="maxAnimais"
+				value="#{piqueteBean.piquete.capacidade}" />
+			<p:outputLabel value="Lote no piquete: " for="loteNoPiquete" />
+			<p:inputText id="loteNoPiquete" value="#{piqueteBean.piquete.lote}" />
+			<p:outputLabel value="Propriedade: " for="propriedadePiquete" />
+			<p:inputText id="propriedadePiquete"
+				value="#{piqueteBean.piquete.propriedade}" />
+			<p:commandButton value="Voltar" action="index">
+				<p:commandButton value="Inserir" action="#{propriedadeBean.inserir}" />
+			</p:commandButton>
+		</p:panelGrid>
+	</h:form>
+
+</h:body>
+</html>

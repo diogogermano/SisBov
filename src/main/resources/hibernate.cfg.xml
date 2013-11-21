@@ -24,7 +24,6 @@
 	
 		<mapping class="br.com.sisbov.persistence.Animal"/>
 		<mapping class="br.com.sisbov.persistence.Raca"/>
-		<mapping class="br.com.sisbov.persistence.Lote"/>
 		<mapping class="br.com.sisbov.persistence.Piquete"/>
 		<mapping class="br.com.sisbov.persistence.Propriedade"/>
 		<mapping class="br.com.sisbov.persistence.Proprietario"/>

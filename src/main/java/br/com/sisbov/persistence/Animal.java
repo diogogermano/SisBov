@@ -22,9 +22,8 @@ public class Animal {
 	@Column
 	private int idade;	
 	
-	@ManyToOne(targetEntity = Lote.class, fetch=FetchType.LAZY)
-	@JoinColumn(name="id", insertable=false, updatable=false)
-	private Lote lote;	
+	@Column
+	private int lote;	
 	
 	@ManyToOne( targetEntity = Raca.class, fetch=FetchType.LAZY )  
     @JoinColumn(name="id", insertable=false, updatable=false)
@@ -53,11 +52,11 @@ public class Animal {
 		this.idade = idade;
 	}
 
-	public Lote getLote() {
+	public int getLote() {
 		return lote;
 	}
 
-	public void setLote(Lote lote) {
+	public void setLote(int lote) {
 		this.lote = lote;
 	}
 

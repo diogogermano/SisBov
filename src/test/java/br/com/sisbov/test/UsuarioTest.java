@@ -9,13 +9,13 @@ public class UsuarioTest {
 
 	@Test
 	public void test() {
-		Usuario usuario = new Usuario();
+	/*	Usuario usuario = new Usuario();
 		UsuarioDao dao = new UsuarioDao();
 		
-		usuario.setLogin("login");
-		usuario.setSenha("senha");
+		usuario.setLogin("login1");
+		usuario.setSenha("senha1");
 		
-		dao.save(usuario);
+		dao.save(usuario);*/
 	}
 
 }

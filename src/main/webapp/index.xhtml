@@ -11,20 +11,19 @@
 	<h:outputStylesheet library="css" name="styles.css" />
 </h:head>
 <h:body>
-	<h:graphicImage library="images" name="sisbov.png" />
+	<h:graphicImage library="images" name="sisbov.png" align="center"/>
 	<h:form>
 		<h:panelGrid columns="3">
 			<h:outputText value="SisBov" styleClass="conteudo" />
-
 			<p:outputLabel value="Logado como : #{usuarioBean.usuario.login}" />
-
 			<p:commandButton value="Logoff" action="#{usuarioBean.logoff}" />
 		</h:panelGrid>
 		<h:panelGrid columns="3">
 			<p:commandButton value="Cadastro de Animal" action="animal" />
 			<p:commandButton value="Cadastro de Raça" action="raca" />
-			<p:commandButton value="Cadastro de Lote" action="lote" />
+			<p:commandButton value="Cadastro de Piquete" action="piquete" />
 			<p:commandButton value="Cadastro de Proprietário" action="proprietario" />
+			<p:commandButton value="Cadastro de Propriedade" action="propriedade" />
 		</h:panelGrid>
 	</h:form>
 </h:body>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Cadastro de Propriedade</title>
+</h:head>
+<body>
+	<h1>Cadastro de Propriedade</h1>
+	<h:form>
+		<h:messages />
+		<p:panelGrid columns="2">
+
+			<p:outputLabel value="Nome da propriedade: " for="nomePropriedade" />
+			<p:inputText id="nomePropriedade" value="#{propriedadeBean.propriedade.nome}" />
+			
+			<p:outputLabel value="Tamanho: " for="tamanhoPropriedade" />
+			<p:inputText id="tamanhoPropriedade" value="#{propriedadeBean.propriedade.tamanho}" />
+			
+			<p:outputLabel value="Proprietario: " for="proprietarioPropriedade" />
+			<p:inputText id="proprietarioPropriedade" value="#{propriedadeBean.propriedade.proprietario}" />
+			
+			<p:outputLabel value="Quantidade de piquetes: " for="qtdPiquetes" />
+			<p:inputText id="qtdPiquetes" value="#{propriedadeBean.propriedade.piquetes}" />
+			
+			<p:commandButton value="Voltar" action="index">
+				<p:commandButton value="Inserir" action="#{propriedadeBean.inserir}" />
+			</p:commandButton>
+		</p:panelGrid>
+	</h:form>
+</body>
+</html>

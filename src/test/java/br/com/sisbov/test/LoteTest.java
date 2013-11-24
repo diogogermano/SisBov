@@ -16,7 +16,7 @@ public class LoteTest {
 
 	@Test
 	public void test() {
-		Lote lote = new Lote();
+		/*Lote lote = new Lote();
 		Piquete piquete = new Piquete();
 		Animal anim = new Animal();
 		
@@ -25,7 +25,7 @@ public class LoteTest {
 		
 		LoteDao dao = new LoteDao();
 		
-		dao.save(lote);
+		dao.save(lote);*/
 	}
 
 }

@@ -6,41 +6,34 @@
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<title>Cadastro de Proprietario</title>
+	<title>sisbov</title>
 </h:head>
 <h:body>
-	<h1>Lista de Proprietario</h1>
+	<h1>Relatório de Raça</h1>
 	<h:form>
 		<p:messages id="messages" showDetail="true" autoUpdate="true"
 			closable="true" />
 		<p:fieldset legend="Filtrar por">
 			<p:outputLabel value="Nome:" />
-			<p:inputText id="nome" value="#{proprietarioBean.nome}" />
+			<p:inputText id="nome" value="#{racaBean.nome}" />
 			<p:commandButton value="Pesquisar"
-				actionListener="#{proprietarioBean.pesquisarProprietario}"
+				actionListener="#{racaBean.pesquisarRaca}"
 				update="dataTable" />
 		</p:fieldset>
 		<p:dataTable id="dataTable" var="result"
-			value="#{proprietarioBean.listagemProprietario}">
-			
-			<p:column headerText="Id">
-				<h:outputText value="#{result.id}" />
-			</p:column>
-			
+			value="#{racaBean.listagemRaca}">
 			<p:column headerText="Nome">
 				<h:outputText value="#{result.nome}" />
 			</p:column>
-			<p:column headerText="Data">
-				<h:outputText value="#{result.dataNascimento}" />
-			</p:column>
+			
 			<p:column>
 				<p:commandButton id="btEdit" icon="ui-icon-pencil"
-					action="#{proprietarioBean.editar(result)}">
+					action="#{racaBean.editar(result)}">
 				</p:commandButton>
 
 				<p:commandButton id="btDelete" icon="ui-icon-trash"
 					onclick="confirmarRemocao.show();"
-					actionListener="#{proprietarioBean.guardarSelecao(result)}">
+					actionListener="#{racaBean.guardarSelecao(result)}">
 				</p:commandButton>
 
 			</p:column>
@@ -50,17 +43,17 @@
 			closeOnEscape="true">
 			<h:outputText value="Deseja realmente excluir?" />
 			<p:commandButton value="Sim" icon="ui-icon-check"
-				action="#{proprietarioBean.remover}"
+				action="#{racaBean.remover}"
 				onclick="confirmarRemocao.hide()">
 			</p:commandButton>
 			<p:commandButton value="Não" icon="ui-icon-close"
 				onclick="confirmarRemocao.hide()" />
 		</p:dialog>
 
-		<p:commandButton value="Cadastrar Proprietario"
-			action="#{proprietarioBean.novaProprietario}" />
+		<p:commandButton value="Cadastrar Raca"
+			action="#{racaBean.novaRaca}" />
 		<p:commandButton value="Imprimir Listagem" ajax="false"
-			actionListener="#{proprietarioBean.imprimirRelatorio}"/>
+			actionListener="#{racaBean.imprimirRelatorio}"/>
 		<p:commandButton value="Voltar" action="index" />
 	</h:form>
 </h:body>

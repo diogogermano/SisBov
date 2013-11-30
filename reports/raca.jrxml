@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="raca" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6bde5ca5-c3dd-4b6a-8d26-90ab317d775c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="131"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     raca."id" AS raca_id,
+     raca."nome" AS raca_nome
+FROM
+     "public"."raca" raca]]>
+	</queryString>
+	<field name="raca_nome" class="java.lang.String"/>
+	<group name="raca_nome">
+		<groupExpression><![CDATA[$F{raca_nome}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="172" y="0" width="369" height="79" uuid="031303cd-0b3e-40ce-af43-2cc73dd41ef0"/>
+				<imageExpression><![CDATA["C:\\Users\\femenolli\\Desktop\\sisbov.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="48" y="9" width="100" height="20" uuid="ac4c1332-5b99-4e50-9650-b9906d557402"/>
+				<text><![CDATA[raca_nome]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="48" y="31" width="100" height="20" uuid="812bab09-8fc1-469b-be19-aa5623c9638d"/>
+				<textFieldExpression><![CDATA[$F{raca_nome}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="292" y="17" width="8" height="20" uuid="daad6c10-776e-4f8d-aed9-018c0f522d06"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="238" y="17" width="10" height="20" uuid="85cb3cc2-d7fe-4422-ae08-8780927f11ad"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="262" y="17" width="14" height="20" uuid="9ee89bbd-0f86-41e4-911d-8ea6b834e43d"/>
+				<text><![CDATA[DE]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

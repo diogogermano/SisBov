@@ -29,8 +29,9 @@ public class ProprietarioBean {
 
 	private Proprietario proprietario;
 
-	private String nome;
-	
+	private String nome = "";
+	private List<Proprietario> listagemProprietario = new ArrayList<Proprietario>();
+	private ProprietarioDao dao = new ProprietarioDao();
 
 	public String getNome() {
 		return nome;
@@ -40,8 +41,6 @@ public class ProprietarioBean {
 		this.nome = nome;
 	}
 
-	private List<Proprietario> listagemProprietario = new ArrayList<Proprietario>();
-	private ProprietarioDao dao = new ProprietarioDao();
 
 	
 
@@ -67,7 +66,8 @@ public class ProprietarioBean {
 			dao.save(proprietario);
 
 			
-			
+			nome = proprietario.getNome();
+			pesquisarProprietario();
 
 			if (proprietario.getId() != null) {
 				context.addMessage(null,
@@ -99,6 +99,10 @@ public class ProprietarioBean {
 	}
 
 	
+	public void pesquisarProprietario() {
+		listagemProprietario = dao.pesquisarProprietarioPorNome(nome);
+	}
+	
 
 	public String remover() {
 		FacesContext context = FacesContext.getCurrentInstance();
@@ -129,7 +133,7 @@ public class ProprietarioBean {
 
 	public void imprimirRelatorio() throws JRException, IOException {
 
-		JasperReport report = JasperCompileManager.compileReport("reports/concessionarias.jrxml");
+		JasperReport report = JasperCompileManager.compileReport("reports/proprietario.jrxml");
 
 		JasperPrint print = JasperFillManager.fillReport(report, null,
 				new JRBeanCollectionDataSource(listagemProprietario));
@@ -140,7 +144,7 @@ public class ProprietarioBean {
 		ServletOutputStream servletOutputStream = response.getOutputStream();
 		response.setContentType("application/pdf");
 		response.setHeader("Content-Disposition",
-				"attachment; filename=concessionarias.pdf");
+				"attachment; filename=proprietario.pdf");
 
 		JasperExportManager.exportReportToPdfStream(print, servletOutputStream);
 		

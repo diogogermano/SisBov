@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"	>
+
+<h:head>
+	<style>
+		#sair:hover {
+			color: #555555;
+			background-color: #e7e7e7;
+		}
+	</style>
+	<link type="text/css" rel="stylesheet" href="resources/css/bootstrap.css" />
+	<script type="text/javascript" src="resources/js/bootstrap.js"></script>
+	<title>sisbov</title>
+</h:head>
+<h:body>
+	  <h:form>
+  	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="index.xhtml">sisbov</a>
+          </div>
+
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cadastros <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><p:commandLink value="Animal" action="animal" /></li>
+                  <li><p:commandLink value="Raça" action="raca" /></li>
+                  <li><p:commandLink value="Piquete" action="piquete" /></li>
+                  <li><p:commandLink value="Proprietário" action="proprietario" /></li>
+                  <li><p:commandLink value="Propriedade" action="propriedade" /></li>
+                </ul>
+              </li>
+            </ul>
+            
+             <ul class="nav navbar-nav">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Relatórios <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><p:commandLink value="Animal" action="animal" /></li>
+                  <li><p:commandLink value="Raça" action="raca" /></li>
+                  <li><p:commandLink value="Piquete" action="piquete" /></li>
+                  <li><p:commandLink value="Proprietário" action="proprietario" /></li>
+                  <li><p:commandLink value="Propriedade" action="propriedade" /></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a hrev="#"><p:outputLabel value="#{usuarioBean.usuario.login}" /></a></li>
+              <li id="sair"><p:commandLink value="sair" action="#{usuarioBean.logoff}" /></li>
+            </ul>
+          </div>
+        </div>
+    </div>
+  </h:form>
+</h:body>
+</html>

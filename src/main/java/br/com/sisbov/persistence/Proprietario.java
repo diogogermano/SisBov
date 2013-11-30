@@ -2,11 +2,13 @@ package br.com.sisbov.persistence;
 
 import java.util.Date;
 
+import javax.faces.context.FacesContext;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.servlet.http.HttpServletResponse;
 
 
 @Entity
@@ -45,6 +47,8 @@ public class Proprietario {
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
+	
+	
 	
 
 }

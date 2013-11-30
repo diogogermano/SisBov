@@ -4,27 +4,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui">
-
-<h:head>
-	<title>Bem Vindo ao SisBov!</title>
-	<h:outputStylesheet library="css" name="styles.css" />
-</h:head>
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"	>
 <h:body>
-	<h:graphicImage library="images" name="sisbov.png" align="center"/>
-	<h:form>
-		<h:panelGrid columns="3">
-			<h:outputText value="SisBov" styleClass="conteudo" />
-			<p:outputLabel value="Logado como : #{usuarioBean.usuario.login}" />
-			<p:commandButton value="Logoff" action="#{usuarioBean.logoff}" />
-		</h:panelGrid>
-		<h:panelGrid columns="3">
-			<p:commandButton value="Cadastro de Animal" action="animal" />
-			<p:commandButton value="Cadastro de Raça" action="raca" />
-			<p:commandButton value="Cadastro de Piquete" action="piquete" />
-			<p:commandButton value="Cadastro de Proprietário" action="proprietario" />
-			<p:commandButton value="Cadastro de Propriedade" action="propriedade" />
-		</h:panelGrid>
-	</h:form>
+	<ui:include src="sidebar.xhtml" />
 </h:body>
 </html>

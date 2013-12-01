@@ -24,6 +24,9 @@
 		</p:fieldset>
 		<p:dataTable id="dataTable" var="result"
 			value="#{racaBean.listagemRaca}">
+			<p:column headerText="Id">
+				<h:outputText value="#{result.id}" />
+			</p:column>
 			<p:column headerText="Nome">
 				<h:outputText value="#{result.nome}" />
 			</p:column>

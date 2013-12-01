@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>sisbov</title>
+</h:head>
+<h:body>
+	<ui:include src="sidebar.xhtml" />	
+	<div class="container" style="margin-top: 70px;">
+	<h:form>
+		<p:messages id="messages" showDetail="true" autoUpdate="true"
+			closable="true" />
+		<p:fieldset legend="Filtrar por">
+			<p:outputLabel value="Nome:" />
+			<p:inputText id="nome" value="#{animalBean.nome}" />
+			<p:commandButton value="Pesquisar"
+				actionListener="#{animalBean.pesquisarAnimal}"
+				update="dataTable" />
+		</p:fieldset>
+		<p:dataTable id="dataTable" var="result"
+			value="#{animalBean.listagemAnimal}">
+			
+			<p:column headerText="Id">
+				<h:outputText value="#{result.id}" />
+			</p:column>
+			
+			<p:column headerText="Nome">
+				<h:outputText value="#{result.nome}" />
+			</p:column>
+			<p:column headerText="Data">
+				<h:outputText value="#{result.lote}" />
+			</p:column>
+			<p:column>
+				<p:commandButton id="btEdit" icon="ui-icon-pencil"
+					action="#{animalBean.editar(result)}">
+				</p:commandButton>
+
+				<p:commandButton id="btDelete" icon="ui-icon-trash"
+					onclick="confirmarRemocao.show();"
+					actionListener="#{animalBean.guardarSelecao(result)}">
+				</p:commandButton>
+
+			</p:column>
+		</p:dataTable>
+		<p:dialog header="Confirmar" widgetVar="confirmarRemocao"
+			id="confirmacao" showEffect="explode" hideEffect="clip" height="100"
+			closeOnEscape="true">
+			<h:outputText value="Deseja realmente excluir?" />
+			<p:commandButton value="Sim" icon="ui-icon-check"
+				action="#{animalBean.remover}"
+				onclick="confirmarRemocao.hide()">
+			</p:commandButton>
+			<p:commandButton value="Não" icon="ui-icon-close"
+				onclick="confirmarRemocao.hide()" />
+		</p:dialog>
+
+		<p:commandButton value="Cadastrar Animal"
+			action="#{animalBean.novaAnimal}" />
+		<p:commandButton value="Imprimir Listagem" ajax="false"
+			actionListener="#{animalBean.imprimirRelatorio}"/>
+		<p:commandButton value="Voltar" action="index" />
+	</h:form>
+	</div>
+</h:body>
+</html>

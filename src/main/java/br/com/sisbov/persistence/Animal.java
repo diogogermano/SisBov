@@ -19,9 +19,21 @@ public class Animal {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;	
+	
+	@Column
+	private String nome;
+	
 	@Column
 	private int idade;	
 	
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
 	@Column
 	private int lote;	
 	

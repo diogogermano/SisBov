@@ -3,13 +3,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <title>Cadastro de Propriedade</title>
 </h:head>
 <body>
-	<h1>Cadastro de Propriedade</h1>
+	<ui:include src="sidebar.xhtml" />	
+	<div class="container" style="margin-top: 70px;">
 	<h:form>
 		<h:messages />
 		<p:panelGrid columns="2">
@@ -27,9 +29,10 @@
 			<p:inputText id="qtdPiquetes" value="#{propriedadeBean.propriedade.piquetes}" />
 			
 			<p:commandButton value="Voltar" action="index">
-				<p:commandButton value="Inserir" action="#{propriedadeBean.inserir}" />
+				<p:commandButton value="Gravar" action="#{propriedadeBean.inserir}" />
 			</p:commandButton>
 		</p:panelGrid>
 	</h:form>
+	</div>
 </body>
 </html>

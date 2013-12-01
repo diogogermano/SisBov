@@ -55,7 +55,7 @@ public class RacaBean {
 		return raca;
 	}
 
-	public String salvar() {
+	public String inserir() {
 		FacesContext context = FacesContext.getCurrentInstance();
 		try {
 			String acao = (raca.getId() != null ? "Alterado"

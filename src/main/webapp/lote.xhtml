@@ -3,28 +3,29 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<title>Cadastro de Lote</title>
+	<title>sisbov</title>
 </h:head>
 <h:body>
 	<h1> Cadastro de Lote</h1>
-	<h:form>
-	<h:messages/>
-		<h:panelGrid columns="2">
-			<p:outputLabel value="Idade:" for="idadeAnimal" />
-			<p:inputText id="idadeAnimal"
-				value="#{animalBean.animal.idade}" />
+	<ui:include src="sidebar.xhtml" />
+	<div class="container" style="margin-top: 70px;">
+		<h:form>
+			<h:messages />
+			<h:panelGrid columns="2">
+				<p:outputLabel value="Idade:" for="idadeAnimal" />
+				<p:inputText id="idadeAnimal" value="#{animalBean.animal.idade}" />
 
 			<
 
 			
 
-			<p:commandButton value="Inserir"
-				action="#{loteBean.inserir}" />
-		</h:panelGrid>
-	</h:form>
-
+			<p:commandButton value="Inserir" action="#{loteBean.inserir}" />
+			</h:panelGrid>
+		</h:form>
+	</div>
 </h:body>
 </html>

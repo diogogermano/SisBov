@@ -6,33 +6,42 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Cadastro de Propriedade</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>sisbov</title>
 </h:head>
-<body>
-	<ui:include src="sidebar.xhtml" />	
+<h:body>
+	<ui:include src="sidebar.xhtml" />
 	<div class="container" style="margin-top: 70px;">
-	<h:form>
-		<h:messages />
-		<p:panelGrid columns="2">
+		<h:form>
+			<p:messages id="messages" autoUpdate="true" closable="true" />
+			<h:panelGrid columns="2">
+				<p:outputLabel value="Nome:" for="nomePropriedade" />
+				<p:inputText id="nomePropriedade"
+					value="#{propriedadeBean.propriedade.nome}" required="true" />
 
-			<p:outputLabel value="Nome da propriedade: " for="nomePropriedade" />
-			<p:inputText id="nomePropriedade" value="#{propriedadeBean.propriedade.nome}" />
-			
-			<p:outputLabel value="Tamanho: " for="tamanhoPropriedade" />
-			<p:inputText id="tamanhoPropriedade" value="#{propriedadeBean.propriedade.tamanho}" />
-			
-			<p:outputLabel value="Proprietario: " for="proprietarioPropriedade" />
-			<p:inputText id="proprietarioPropriedade" value="#{propriedadeBean.propriedade.proprietario}" />
-			
-			<p:outputLabel value="Quantidade de piquetes: " for="qtdPiquetes" />
-			<p:inputText id="qtdPiquetes" value="#{propriedadeBean.propriedade.piquetes}" />
-			
-			<p:commandButton value="Voltar" action="index">
-				<p:commandButton value="Gravar" action="#{propriedadeBean.inserir}" />
-			</p:commandButton>
-		</p:panelGrid>
-	</h:form>
+				<p:outputLabel value="Tamanho:" for="tamanhoPropriedade" />
+				<p:inputText id="tamanhoPropriedade"
+					value="#{propriedadeBean.propriedade.tamanho}" required="true" />
+
+				<p:outputLabel value="Quantidade de Piquetes:" for="piquetesPropriedade" />
+				<p:inputText id="piquetesPropriedade"
+					value="#{propriedadeBean.propriedade.piquetes}" required="true" />
+
+
+
+
+				<p:commandButton value="Gravar"
+					rendered="#{concessionariaBean.concessionaria.id == null}"
+					action="#{propriedadeBean.inserir}" />
+
+				<p:commandButton value="Alterar"
+					rendered="#{concessionariaBean.concessionaria.id != null}"
+					action="#{concessionariaBean.salvar}" />
+
+				<p:commandButton value="Voltar" action="propriedadeList"
+					immediate="true" />
+			</h:panelGrid>
+		</h:form>
 	</div>
-</body>
+</h:body>
 </html>

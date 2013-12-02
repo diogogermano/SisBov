@@ -21,9 +21,7 @@ public class Propriedade {
 	@Column
 	private double tamanho;
 	
-	@ManyToOne( targetEntity = Proprietario.class, fetch=FetchType.LAZY )
-	private Proprietario proprietario;
-	
+
 	@Column
 	private int piquetes;
 
@@ -51,13 +49,7 @@ public class Propriedade {
 		this.tamanho = tamanho;
 	}
 
-	public Proprietario getProprietario() {
-		return proprietario;
-	}
 
-	public void setProprietario(Proprietario proprietario) {
-		this.proprietario = proprietario;
-	}
 
 	public int getPiquetes() {
 		return piquetes;

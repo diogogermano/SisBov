@@ -19,11 +19,6 @@
 				<p:outputLabel value="Nome:" for="nomeProprietario" />
 				<p:inputText id="nomeProprietario"
 					value="#{proprietarioBean.proprietario.nome}" required="true" />
-	
-				
-	
-				
-	
 				<p:commandButton value="Gravar"
 					rendered="#{concessionariaBean.concessionaria.id == null}"
 					action="#{proprietarioBean.inserir}" />
@@ -32,7 +27,7 @@
 					rendered="#{concessionariaBean.concessionaria.id != null}"
 					action="#{concessionariaBean.salvar}" />
 	
-				<p:commandButton value="Voltar" action="proprietarioList" immediate="true"/>
+				<p:commandButton value="Voltar para o início" action="index" immediate="true"/>
 			</h:panelGrid>
 		</h:form>
 	</div>

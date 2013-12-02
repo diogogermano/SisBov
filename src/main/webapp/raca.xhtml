@@ -14,15 +14,13 @@
 	<div class="container" style="margin-top: 70px;">
 	<h:form>
 		<h:messages />
-		<p:panelGrid columns="2">
-
+		<h:panelGrid columns="2">
 			<p:outputLabel value="Raça: " for="nomeRaca" />
-			<p:inputText id="nomeRaca" value="#{racaBean.raca.nome}" />
-
-			<p:commandButton value="Voltar" action="racaList">
-				<p:commandButton value="Inserir" action="#{racaBean.inserir}" />
-			</p:commandButton>
-		</p:panelGrid>
+			<p:inputText id="nomeRaca" value="#{racaBean.raca.nome}"  required="true"/>
+			
+			<p:commandButton value="Gravar" action="#{racaBean.inserir}" />
+			<p:commandButton value="Voltar para o início" action="index" />
+		</h:panelGrid>
 	</h:form>
 	</div>
 </body>

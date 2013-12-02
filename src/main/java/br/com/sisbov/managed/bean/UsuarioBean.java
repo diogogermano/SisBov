@@ -17,11 +17,11 @@ public class UsuarioBean {
     private UsuarioDao dao = new UsuarioDao();
 
     public Usuario getUsuario() {
-	return usuario;
+    	return usuario;
     }
 
     public void setUsuario(Usuario usuario) {
-	this.usuario = usuario;
+    	this.usuario = usuario;
     }
 
     public String logar() {
@@ -36,11 +36,11 @@ public class UsuarioBean {
     }
 
     public boolean isLogado() {
-	return usuario.getLogin() != null;
+    	return usuario.getLogin() != null;
     }
 
     public String logoff() {
-	this.usuario = new Usuario();
-	return "login";
+    	this.usuario = new Usuario();
+    	return "login";
     }
 }
